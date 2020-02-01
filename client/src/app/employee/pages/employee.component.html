@@ -1,1 +1,10 @@
-<p>employee works!</p>
+<div class="container">
+  <h2>employees List!</h2>
+
+  <mat-list class="employees-list" role="list">
+    <mat-list-item role="listitem" *ngFor="let item of [1,2,3,4]">
+      <span>Item {{item}}</span>
+      <button mat-stroked-button color="primary">View</button>
+    </mat-list-item>
+  </mat-list>
+</div>
