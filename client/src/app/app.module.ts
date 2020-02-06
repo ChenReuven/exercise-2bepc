@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {AppRoutingModule} from './app.routing.module';
 import {EmployeeModule} from './employee/employee.module';
 import {ManagerModule} from './manager/manager.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ManagerModule} from './manager/manager.module';
     MatButtonModule,
     AppRoutingModule,
     EmployeeModule,
-    ManagerModule
+    ManagerModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

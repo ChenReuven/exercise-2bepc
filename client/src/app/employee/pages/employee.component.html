@@ -2,9 +2,11 @@
   <h2>employees List!</h2>
 
   <mat-list class="employees-list" role="list">
-    <mat-list-item role="listitem" *ngFor="let item of [1,2,3,4]">
-      <span>Item {{item}}</span>
-      <button mat-stroked-button color="primary">View</button>
+    <mat-list-item role="listitem" *ngFor="let person of (employees$ | async )">
+      <span>{{person.firstName}} {{person.lastName}} {{person.position}}</span>
+      <a routerLink="/employees/details/{{person.id}}">
+        <button mat-stroked-button color="primary" >View</button>
+      </a>
     </mat-list-item>
   </mat-list>
 </div>
