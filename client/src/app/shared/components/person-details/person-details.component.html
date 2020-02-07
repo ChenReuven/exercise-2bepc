@@ -1,4 +1,38 @@
 <div *ngIf="person">
-  {{ person.id }} {{ person.firstName }} {{ person.lastName }}
-  {{ person.position }}
+  <div>
+    <div>
+      <label for="name">Name</label>
+      {{ person.firstName }} {{ person.lastName }}
+    </div>
+    <div>
+      <label for="position">Position</label>
+      {{ person.position }}
+    </div>
+    <hr />
+    <div>
+      <label for="manager">Manager</label>
+      {{ person.manager?.firstName }} {{ person.manager?.lastName }}
+      <button mat-raised-button color="primary">Report</button>
+    </div>
+  </div>
+  <div class="tasks" *ngIf="person.tasks">
+    <div>
+      My Tasks:
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let task of person.tasks"> {{task.text}}  @@@ {{task.dueDate | date: "short"}}</mat-list-item>
+     </mat-list>
+  </div>
+
+  <div class="subordinates" *ngIf="person?.subordinates">
+    <div>
+      My Subordinates:
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let subordinate of person?.subordinates">
+        {{subordinate.firstName}} {{subordinate.lastName}} {{ subordinate.position }}
+        <button mat-raised-button color="primary">Assign Task</button>
+      </mat-list-item>
+     </mat-list>
+  </div>
 </div>

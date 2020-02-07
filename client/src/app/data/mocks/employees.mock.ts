@@ -7,13 +7,15 @@ export const employeesMock: Person[] = [
     lastName: 'Doe',
     position: 'p1',
     manager: {
-      id: '1'
+      id: '1',
+      firstName: 'John',
+      lastName: 'Doe'
     },
     tasks: [{
       text: 'report 1',
       assingDate: new Date(),
       dueDate: new Date()
-    }]
+    }],
   },
   {
     id: '2',
