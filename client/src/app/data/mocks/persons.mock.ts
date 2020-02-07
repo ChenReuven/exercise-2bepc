@@ -1,11 +1,19 @@
 import { Person } from '../models/person.interface';
 
-export const personsMock: Person[] = [
+export const employeesMock: Person[] = [
   {
     id: '1',
     firstName: 'John',
     lastName: 'Doe',
-    position: 'p1'
+    position: 'p1',
+    manager: {
+      id: '1'
+    },
+    tasks: [{
+      text: 'report 1',
+      assingDate: new Date(),
+      dueDate: new Date()
+    }]
   },
   {
     id: '2',
