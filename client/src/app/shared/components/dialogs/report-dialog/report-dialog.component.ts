@@ -16,7 +16,7 @@ import { Report } from 'src/app/data/models/report.interface';
     <div mat-dialog-actions>
       <button mat-button (click)="onCancel()">Cancel</button>
       <button [disabled]="!isReportValid(reportTextModel)" mat-button (click)="onReport(reportTextModel)" cdkFocusInitial>
-        Report
+        Save
       </button>
     </div>
   `
