@@ -58,4 +58,3 @@ Then, run Nest as usual:
     - Actions
         - reportToManager (text, report date)
         - assignTask (text, assign date, due date)
-

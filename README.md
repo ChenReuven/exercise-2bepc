@@ -16,5 +16,11 @@ Domains/Models of apps:
 - Server Side: Create a NestJS (use the mongoose adapter), for create a REST APIs to handle the CRUD operations of the Domains
 - Client Side: Create an web app application, based on angular that represent the organiztion structure
 
+Tools Use:
+1. Server
+- mongoose
+- NestJs
+- Mongo Compass
+- Postman
 
 
