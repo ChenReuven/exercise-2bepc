@@ -27,7 +27,12 @@ Then, run Nest as usual:
 
 
 -- Server Design --
-Entities:
+1. define domain/entities and modules
+2. define use cases (domain services)
+3. Controllers -> Mongoose
+
+
+-- Entities/Domains --
 - Employee
     - Fields
         - first name
@@ -52,3 +57,4 @@ Entities:
     - Actions
         - reportToManager (text, report date)
         - assignTask (text, assign date, due date)
+

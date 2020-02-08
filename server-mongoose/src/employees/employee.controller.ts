@@ -2,7 +2,6 @@ import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { EmployeesService } from './employees.service';
 import { Employee } from './interface/employee.interface';
-import { Cat } from 'src/cats/interfaces/cat.interface';
 import { ReprotEmployeeToManagerDto } from './dto/report-employee-to-manager.dto';
 
 @Controller('employees')
@@ -35,7 +34,7 @@ export class EmployeesController {
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string): Promise<Cat> {
+  async delete(@Param('id') id: string): Promise<Employee> {
     return this.employeesService.delete(id);
   }
 }
