@@ -3,13 +3,13 @@ import { Manager } from '../models/manager.interface';
 export const managersMock: Manager[] = [
   {
     id: '1',
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'John Manager',
+    lastName: 'Doe Manager',
     position: 'p1',
     manager: {
       id: '2',
-      firstName: 'Yana',
-      lastName: 'Mals',
+      firstName: 'Yana Manager',
+      lastName: 'Mals Manager',
       position: 'p2'
     },
     tasks: [{

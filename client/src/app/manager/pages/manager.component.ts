@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import { Observable } from 'rxjs';
+import { Manager } from 'src/app/data/models/manager.interface';
+import { ManagerService } from '../services/manager.service';
 
 @Component({
   selector: 'app-manager',
@@ -7,9 +10,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ManagerComponent implements OnInit {
 
-  constructor() { }
+  managers$: Observable<Manager[]>;
+
+  constructor(private managerService: ManagerService) {}
 
   ngOnInit() {
+    this.managers$ = this.managerService.getManagers();
   }
 
 }
