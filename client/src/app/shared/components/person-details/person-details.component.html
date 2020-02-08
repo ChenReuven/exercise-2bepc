@@ -10,9 +10,11 @@
     </div>
     <hr />
     <div>
-      <label for="manager">Manager</label>
+      <label for="manager">Manager:</label>
       {{ person.manager?.firstName }} {{ person.manager?.lastName }}
-      <button mat-raised-button color="primary" (click)="onReport(person)">Report</button>
+      <button mat-raised-button color="primary" (click)="onReport(person)">
+        Report
+      </button>
     </div>
   </div>
   <div class="tasks" *ngIf="person.tasks">
@@ -20,8 +22,10 @@
       My Tasks:
     </div>
     <mat-list>
-      <mat-list-item *ngFor="let task of person.tasks"> {{task.text}}  @@@ {{task.dueDate | date: "short"}}</mat-list-item>
-     </mat-list>
+      <mat-list-item *ngFor="let task of person.tasks">
+        {{ task.text }} @@@ {{ task.dueDate | date: "short" }}</mat-list-item
+      >
+    </mat-list>
   </div>
 
   <div class="subordinates" *ngIf="person?.subordinates">
@@ -30,9 +34,21 @@
     </div>
     <mat-list>
       <mat-list-item *ngFor="let subordinate of person?.subordinates">
-        {{subordinate.firstName}} {{subordinate.lastName}} {{ subordinate.position }}
+        {{ subordinate.firstName }} {{ subordinate.lastName }}
+        {{ subordinate.position }}
         <button mat-raised-button color="primary">Assign Task</button>
       </mat-list-item>
-     </mat-list>
+    </mat-list>
+  </div>
+
+  <div class="reports" *ngIf="person?.reports">
+    <div>
+      Reports Others To Me:
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let report of person?.reports">
+        Report Subject: {{ report.text }} on {{ report.date | date: "short" }}
+      </mat-list-item>
+    </mat-list>
   </div>
 </div>

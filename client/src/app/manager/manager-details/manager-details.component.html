@@ -1,0 +1,4 @@
+<ng-container *ngIf="manager$ | async as manager">
+  <!-- <app-person-details [person]="manager" (assignTask)="onReport($event, manager)"></app-person-details> -->
+  <app-person-details [person]="manager"></app-person-details>
+</ng-container>

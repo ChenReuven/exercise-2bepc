@@ -28,6 +28,7 @@ export class EmployeesService {
     // tslint:disable-next-line: no-shadowed-variable
     const { text, reportDate, managerId, employeeId } = reprotEmployeeToManagerDto;
     const report = await this.reportsService.create({text, reportDate});
+    // TODO: need to check if need update the employye report
     const employeeUpdate = await this.employeeModel.findOneAndUpdate({_id: employeeId}, { $push: { reports: report._id }}).exec();
     const managerUpdate = await this.managersService.findOneAndUpdate({managerId, reportId: report._id });
   }
