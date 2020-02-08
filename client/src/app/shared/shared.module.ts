@@ -11,9 +11,11 @@ import { ReportDialogComponent } from './components/dialogs/report-dialog/report
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AssignTaskDialogComponent } from './components/dialogs/assign-task-dialog/assign-task-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PersonListComponent } from './components/person-list/person-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [PersonDetailsComponent, ReportDialogComponent, AssignTaskDialogComponent],
+  declarations: [PersonListComponent, PersonDetailsComponent, ReportDialogComponent, AssignTaskDialogComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,9 +26,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    RouterModule,
   ],
   entryComponents: [ReportDialogComponent, AssignTaskDialogComponent],
-  exports: [PersonDetailsComponent]
+  exports: [PersonListComponent, PersonDetailsComponent]
 })
 export class SharedModule {}

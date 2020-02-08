@@ -1,12 +1,6 @@
 <div class="container">
   <h2>Manager List</h2>
 
-  <mat-list class="manager-list" role="list">
-    <mat-list-item role="listitem" *ngFor="let person of (managers$ | async )">
-      <span>{{person.firstName}} {{person.lastName}} {{person.position}}</span>
-      <a routerLink="/managers/details/{{person.id}}">
-        <button mat-stroked-button color="primary" >View</button>
-      </a>
-    </mat-list-item>
-  </mat-list>
+  <app-person-list [persons]="managers$ | async" [personType]="'managers'"></app-person-list>
+
 </div>
