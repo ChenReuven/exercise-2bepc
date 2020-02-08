@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Task } from 'src/app/data/models/task.interface';
 
@@ -31,7 +31,8 @@ import { Task } from 'src/app/data/models/task.interface';
         Save
       </button>
     </div>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AssignTaskDialogComponent {
   taskTextModel: string;

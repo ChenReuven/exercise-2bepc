@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
-import { MatDialogRef } from "@angular/material/dialog";
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Report } from 'src/app/data/models/report.interface';
 
 @Component({
-  selector: "app-report-dialog",
+  selector: 'app-report-dialog',
   template: `
     <h1 mat-dialog-title>Report</h1>
     <div mat-dialog-content>
@@ -19,7 +19,8 @@ import { Report } from 'src/app/data/models/report.interface';
         Save
       </button>
     </div>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportDialogComponent {
   reportTextModel: string;
@@ -33,7 +34,7 @@ export class ReportDialogComponent {
     const report: Report = {
       date: new Date(),
       text: reportTextModel
-    }
+    };
     this.dialogRef.close(report);
   }
 

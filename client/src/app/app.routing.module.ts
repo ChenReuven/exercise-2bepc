@@ -14,7 +14,7 @@ import { ManagerDetailsComponent } from './manager/manager-details/manager-detai
       { path: 'managers', component: ManagerComponent },
       { path: 'managers/details/:id', component: ManagerDetailsComponent},
       { path: 'managers/details/:id', component: PersonDetailsComponent},
-      { path: '**', redirectTo: 'employees' }
+      { path: '**', redirectTo: 'employees'}
     ])
   ],
   exports: [

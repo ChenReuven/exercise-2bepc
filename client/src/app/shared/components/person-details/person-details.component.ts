@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Person } from 'src/app/data/models/person.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { Report } from 'src/app/data/models/report.interface';
@@ -9,7 +9,8 @@ import { Task } from 'src/app/data/models/task.interface';
 @Component({
   selector: 'app-person-details',
   templateUrl: './person-details.component.html',
-  styleUrls: ['./person-details.component.scss']
+  styleUrls: ['./person-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonDetailsComponent {
   @Input() person: Person;

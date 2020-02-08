@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Person } from 'src/app/data/models/person.interface';
@@ -12,7 +12,8 @@ import { ReportDto } from 'src/app/data/models/dto/report-dto';
 @Component({
   selector: 'app-manager-details',
   templateUrl: './manager-details.component.html',
-  styleUrls: ['./manager-details.component.scss']
+  styleUrls: ['./manager-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ManagerDetailsComponent implements OnInit {
   manager$: Observable<Person>;

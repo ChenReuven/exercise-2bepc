@@ -6,7 +6,7 @@ import { personType } from 'src/app/data/models/person-type';
   selector: 'app-person-list',
   templateUrl: './person-list.component.html',
   styleUrls: ['./person-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonListComponent {
   @Input() persons: Person[];
