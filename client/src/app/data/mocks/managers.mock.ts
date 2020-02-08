@@ -14,7 +14,7 @@ export const managersMock: Manager[] = [
     },
     tasks: [{
       text: 'manager 1 task 1',
-      assingDate: new Date(),
+      assignDate: new Date(),
       dueDate: new Date()
     }],
     subordinates: [{

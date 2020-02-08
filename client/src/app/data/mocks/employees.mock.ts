@@ -13,7 +13,7 @@ export const employeesMock: Person[] = [
     },
     tasks: [{
       text: 'report 1',
-      assingDate: new Date(),
+      assignDate: new Date(),
       dueDate: new Date()
     }],
   },

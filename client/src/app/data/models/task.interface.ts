@@ -1,5 +1,5 @@
 export interface Task {
   text: string;
-  assingDate: Date;
+  assignDate: Date;
   dueDate: Date;
 }
