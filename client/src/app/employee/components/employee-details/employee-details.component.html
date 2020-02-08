@@ -1,1 +1,3 @@
-<app-person-details [person]="employee$ | async"></app-person-details>
+<ng-container *ngIf="employee$ | async as employee">
+  <app-person-details [person]="employee" (report)="onReport($event, employee)"></app-person-details>
+</ng-container>

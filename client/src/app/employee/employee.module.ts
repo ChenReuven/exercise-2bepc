@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { SharedModule } from '../shared/shared.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [EmployeeComponent, EmployeeDetailsComponent],
@@ -14,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
     MatListModule,
     MatButtonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatSnackBarModule
   ]
 })
 export class EmployeeModule {}

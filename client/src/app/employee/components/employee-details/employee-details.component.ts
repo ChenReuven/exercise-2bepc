@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { Observable } from 'rxjs';
 import { Person } from 'src/app/data/models/person.interface';
+import { Report } from 'src/app/data/models/report.interface';
+import { Employee } from 'src/app/data/models/employee.interface';
+import { ReportDto } from 'src/app/data/models/dto/report-dto';
 
 @Component({
   selector: 'app-employee-details',
@@ -21,5 +24,16 @@ export class EmployeeDetailsComponent implements OnInit {
   loadEmployee(): void {
     const employeeId = this.route.snapshot.paramMap.get('id');
     this.employee$ = this.employeeService.getEmployee(employeeId);
+
+  }
+
+  onReport(report: Report, employee: Employee) {
+    const {id, manager} = employee;
+    const reportDto: ReportDto = {
+      employeeId: id,
+      managerId: manager.id,
+      report
+    };
+    this.employeeService.report(reportDto);
   }
 }

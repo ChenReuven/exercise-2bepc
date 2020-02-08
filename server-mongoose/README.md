@@ -27,9 +27,10 @@ Then, run Nest as usual:
 
 
 -- Server Design --
-1. define domain/entities and modules
+1. define domain/entities and connection and modules
 2. define use cases (domain services)
 3. Controllers -> Mongoose
+    - Apis that represent the use case and operate on the mongoose DB
 
 
 -- Entities/Domains --

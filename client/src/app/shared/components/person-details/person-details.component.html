@@ -12,7 +12,7 @@
     <div>
       <label for="manager">Manager</label>
       {{ person.manager?.firstName }} {{ person.manager?.lastName }}
-      <button mat-raised-button color="primary">Report</button>
+      <button mat-raised-button color="primary" (click)="onReport(person)">Report</button>
     </div>
   </div>
   <div class="tasks" *ngIf="person.tasks">
