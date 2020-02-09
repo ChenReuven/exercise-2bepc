@@ -36,7 +36,7 @@
       <mat-list-item *ngFor="let subordinate of person?.subordinates">
         {{ subordinate.firstName }} {{ subordinate.lastName }}
         {{ subordinate.position }}
-        <button mat-raised-button color="primary" (click)="onAssignTask(person)">Assign Task</button>
+        <button mat-raised-button color="primary" (click)="onAssignTask(subordinate)">Assign Task</button>
       </mat-list-item>
     </mat-list>
   </div>

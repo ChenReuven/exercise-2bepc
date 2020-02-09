@@ -15,7 +15,7 @@ import { Task } from 'src/app/data/models/task.interface';
 export class PersonDetailsComponent {
   @Input() person: Person;
   @Output() report = new EventEmitter<Report>();
-  @Output() assignTask = new EventEmitter<Task>();
+  @Output() assignTask = new EventEmitter<any>();
 
   constructor(public dialog: MatDialog) {}
 
@@ -45,7 +45,7 @@ export class PersonDetailsComponent {
 
     dialogRef.afterClosed().subscribe((task: Task) => {
       if (!task) { return; }
-      this.assignTask.emit(task);
+      this.assignTask.emit({task, personId: person._id});
     });
   }
 

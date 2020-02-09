@@ -39,11 +39,11 @@ export class ManagerDetailsComponent implements OnInit {
     this.managerService.report(reportDto);
   }
 
-  onAssignTask(task: Task, manager: Manager) {
-    const {_id: id} = manager;
+  onAssignTask({task, personId}, manager: Manager) {
+    const {_id: managerId} = manager;
     const taskDto: TaskDto = {
-      employeeId: id,
-      managerId: manager._id,
+      employeeId: personId,
+      managerId,
       task
     };
     this.managerService.assignTask(taskDto);

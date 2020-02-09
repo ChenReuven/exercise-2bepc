@@ -28,13 +28,31 @@ export class ManagerService {
   }
 
   report(reportDto: ReportDto) {
-    // call to employee report service
-    this.openSnackBar('Report Success', 'close');
-    return of({});
+     this.http
+      .post<Manager>('/managers/report', {
+        text: reportDto.report.text,
+        date: reportDto.report.date,
+        managerId: reportDto.managerId,
+        employeeId: reportDto.employeeId
+      })
+      .subscribe(data => {
+        this.openSnackBar('Report Success', 'close');
+      });
+     return of({});
   }
 
   assignTask(taskDto: TaskDto) {
-    this.openSnackBar('Assign Task Successfully', 'Cancel');
+    this.http
+    .post<Manager>('/managers/assign-task', {
+      text: taskDto.task.text,
+      assignDate: taskDto.task.assignDate,
+      dueDate: taskDto.task.dueDate,
+      managerId: taskDto.managerId,
+      employeeId: taskDto.employeeId
+    })
+    .subscribe(data => {
+      this.openSnackBar('Assign Task Successfully', 'Cancel');
+    });
     return of({});
   }
 

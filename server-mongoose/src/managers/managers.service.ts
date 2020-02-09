@@ -38,7 +38,7 @@ export class ManagersService {
     const task = await this.tasksService.create({text, assignDate, dueDate});
     // await this.employeesService.assignTask({employeeId, taskId: task._id}); ///////
     await this.employeeModel.findOneAndUpdate({_id: employeeId}, { $push: { tasks: task._id }}).exec();
-    await this.managerModel.findOneAndUpdate({_id: employeeId}, { $push: { tasks: task._id }}).exec();
+    //await this.managerModel.findOneAndUpdate({_id: employeeId}, { $push: { tasks: task._id }}).exec();
   }
 
   async findOneAndUpdate({managerId, reportId}): Promise<any> {
