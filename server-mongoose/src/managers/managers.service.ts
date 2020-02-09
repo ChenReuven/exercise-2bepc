@@ -26,9 +26,9 @@ export class ManagersService {
 
   async reportToManager(reportToManagerDto: ReportToManagerDto): Promise<any> {
     // tslint:disable-next-line: no-shadowed-variable
-    const { text, reportDate, managerId, employeeId } = reportToManagerDto;
+    const { text, date, managerId, employeeId } = reportToManagerDto;
     // tslint:disable-next-line: no-shadowed-variable
-    const report = await this.reportsService.create({text, reportDate});
+    const report = await this.reportsService.create({text, date});
   }
 
   async assignTask(assignTaskDto: AssignTaskDto): Promise<any> {
@@ -47,7 +47,7 @@ export class ManagersService {
 
   async findAll(): Promise<Manager[]> {
     return this.managerModel
-    .find()
+    .find({})
     .populate('tasks')
     .populate('reports')
     .exec();
@@ -63,6 +63,7 @@ export class ManagersService {
       .populate('tasks')
       .populate('reports')
       .populate('manager', 'firstName lastName id')
+      .populate('subordinates', 'firstName lastName id')
       .exec();
   }
 

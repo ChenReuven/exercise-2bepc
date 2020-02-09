@@ -2,12 +2,12 @@ import { Manager } from '../models/manager.interface';
 
 export const managersMock: Manager[] = [
   {
-    id: '1',
+    _id: '1',
     firstName: 'John Manager',
     lastName: 'Doe Manager',
     position: 'p1',
     manager: {
-      id: '2',
+      _id: '2',
       firstName: 'Yana Manager',
       lastName: 'Mals Manager',
       position: 'p2'
@@ -18,7 +18,7 @@ export const managersMock: Manager[] = [
       dueDate: new Date()
     }],
     subordinates: [{
-      id: '1',
+      _id: '1',
       firstName: 'John',
       lastName: 'Doe',
       position: 'p1'
@@ -29,13 +29,13 @@ export const managersMock: Manager[] = [
     }]
   },
   {
-    id: '2',
+    _id: '2',
     firstName: 'Yana',
     lastName: 'Mals',
     position: 'p2'
   },
   {
-    id: '3',
+    _id: '3',
     firstName: 'Ronnen',
     lastName: 'yalner',
     position: 'p3'

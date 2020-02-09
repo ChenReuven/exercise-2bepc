@@ -18,7 +18,7 @@ export class EmployeesService {
 
   async findAll(): Promise<Employee[]> {
     return this.employeeModel
-      .find()
+      .find({})
       .populate('tasks')
       .populate('manager', 'firstName lastName id')
       .exec();
@@ -26,8 +26,8 @@ export class EmployeesService {
 
   async reportToManager(reprotEmployeeToManagerDto: ReprotEmployeeToManagerDto): Promise<any> {
     // tslint:disable-next-line: no-shadowed-variable
-    const { text, reportDate, managerId, employeeId } = reprotEmployeeToManagerDto;
-    const report = await this.reportsService.create({text, reportDate});
+    const { text, date, managerId, employeeId } = reprotEmployeeToManagerDto;
+    const report = await this.reportsService.create({text, date});
     // TODO: need to check if need update the employye report
     const employeeUpdate = await this.employeeModel.findOneAndUpdate({_id: employeeId}, { $push: { reports: report._id }}).exec();
     const managerUpdate = await this.managersService.findOneAndUpdate({managerId, reportId: report._id });

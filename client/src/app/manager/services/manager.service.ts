@@ -6,22 +6,25 @@ import { managersMock } from 'src/app/data/mocks/managers.mock';
 import { Manager } from 'src/app/data/models/manager.interface';
 import { TaskDto } from 'src/app/data/models/dto/task-dto';
 import { ReportDto } from 'src/app/data/models/dto/report-dto';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ManagerService {
-  constructor(private _snackBar: MatSnackBar) {}
-  getManagers(): Observable<Employee[]> {
-    return of(managersMock);
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
+  getManagers(): Observable<Manager[]> {
+    // return of(managersMock);
+    return this.http.get<Manager[]>('/managers');
   }
 
   getManager(managerId: string): Observable<Manager> {
     // tslint:disable-next-line: no-shadowed-variable
     const manager: Manager = managersMock.find(
-      (manager: Manager) => manager.id === managerId
+      (manager: Manager) => manager._id === managerId
     );
-    return of(manager);
+    // return of(manager);
+    return this.http.get<Employee>('/managers/' + managerId);
   }
 
   report(reportDto: ReportDto) {

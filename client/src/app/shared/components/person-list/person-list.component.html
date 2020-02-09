@@ -5,7 +5,7 @@
         >{{ person.firstName }} {{ person.lastName }}
         {{ person.position }}</span
       >
-      <a routerLink="/{{ personType }}/details/{{ person.id }}">
+      <a routerLink="/{{ personType }}/details/{{ person._id }}">
         <button mat-stroked-button color="primary">View</button>
       </a>
     </mat-list-item>

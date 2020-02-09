@@ -29,10 +29,10 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   onReport(report: Report, employee: Employee) {
-    const {id, manager} = employee;
+    const {_id: id, manager} = employee;
     const reportDto: ReportDto = {
       employeeId: id,
-      managerId: manager.id,
+      managerId: manager._id,
       report
     };
     this.employeeService.report(reportDto);
