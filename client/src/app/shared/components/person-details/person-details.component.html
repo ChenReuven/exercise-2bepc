@@ -13,7 +13,7 @@
         {{ person.position }}
       </div>
       <hr />
-      <div>
+      <div *ngIf="person?.manager?._id">
         <label for="manager">Manager:</label>
         {{ person.manager?.firstName }} {{ person.manager?.lastName }}
         <button mat-raised-button color="primary" (click)="onReport(person)">
@@ -22,26 +22,27 @@
       </div>
     </div>
   </div>
-  <div class="tasks" *ngIf="person.tasks">
+  <div class="tasks" *ngIf="person.tasks && person.tasks.length > 0">
     <div>
-      My Tasks:
+      <label>My Tasks:</label>
     </div>
     <mat-list>
       <mat-list-item *ngFor="let task of person.tasks">
-        {{ task.text }} @@@ {{ task.dueDate | date: "short" }}</mat-list-item
+        {{ task.text }} <span class="task-on">on</span> {{ task.dueDate | date: "short" }}</mat-list-item
       >
     </mat-list>
   </div>
 
-  <div class="subordinates" *ngIf="person?.subordinates">
+  <div class="subordinates" *ngIf="person?.subordinates && person?.subordinates.length > 0">
     <div>
-      My Subordinates:
+      <label>My Subordinates:</label>
     </div>
     <mat-list>
       <mat-list-item *ngFor="let subordinate of person?.subordinates">
         {{ subordinate.firstName }} {{ subordinate.lastName }}
         {{ subordinate.position }}
         <button
+          class="assign-task-btn"
           mat-raised-button
           color="primary"
           (click)="onAssignTask(subordinate)"
@@ -52,14 +53,17 @@
     </mat-list>
   </div>
 
-  <div class="reports" *ngIf="person?.reports">
+  <div class="reports" *ngIf="person?.reports && person?.reports.length > 0">
     <div>
-      Reports Others To Me:
+      <label>Reports Others To Me:</label>
     </div>
     <mat-list>
       <mat-list-item *ngFor="let report of person?.reports">
-        Report Subject: {{ report.text }} on {{ report.date | date: "short" }}
+        <span class="report-subject-label">Report Subject:</span>
+        <span>{{ report.text }} on {{ report.date | date: "short" }}</span>
       </mat-list-item>
     </mat-list>
   </div>
+
+  <pre>{{person | json}}</pre>
 </div>

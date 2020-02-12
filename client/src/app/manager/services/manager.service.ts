@@ -36,7 +36,7 @@ export class ManagerService {
         employeeId: reportDto.employeeId
       })
       .subscribe(data => {
-        this.openSnackBar('Report Success', 'close');
+        this.openSnackBar('Report Success', 'Close');
       });
      return of({});
   }
@@ -51,7 +51,7 @@ export class ManagerService {
       employeeId: taskDto.employeeId
     })
     .subscribe(data => {
-      this.openSnackBar('Assign Task Successfully', 'Cancel');
+      this.openSnackBar('Assign Task Successfully', 'Close');
     });
     return of({});
   }

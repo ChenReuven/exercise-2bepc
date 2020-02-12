@@ -28,8 +28,6 @@ export class EmployeesService {
     // tslint:disable-next-line: no-shadowed-variable
     const { text, date, managerId, employeeId } = reprotEmployeeToManagerDto;
     const report = await this.reportsService.create({text, date});
-    // TODO: need to check if need update the employye report
-    const employeeUpdate = await this.employeeModel.findOneAndUpdate({_id: employeeId}, { $push: { reports: report._id }}).exec();
     const managerUpdate = await this.managersService.findOneAndUpdate({managerId, reportId: report._id });
   }
 
@@ -46,7 +44,6 @@ export class EmployeesService {
     return this.employeeModel
       .findById({ _id: id })
       .populate('tasks')
-      .populate('reports')
       .populate('manager', 'firstName lastName id')
       .exec();
   }

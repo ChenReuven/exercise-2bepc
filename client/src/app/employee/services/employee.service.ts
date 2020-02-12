@@ -37,7 +37,7 @@ export class EmployeeService {
         employeeId: reportDto.employeeId
       })
       .subscribe(data => {
-        this.openSnackBar('Report Success', 'close');
+        this.openSnackBar('Report Success', 'Close');
       });
     return of({});
   }

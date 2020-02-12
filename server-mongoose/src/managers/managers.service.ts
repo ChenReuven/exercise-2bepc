@@ -29,6 +29,7 @@ export class ManagersService {
     const { text, date, managerId, employeeId } = reportToManagerDto;
     // tslint:disable-next-line: no-shadowed-variable
     const report = await this.reportsService.create({text, date});
+    const managerUpdate = await this.findOneAndUpdate({managerId, reportId: report._id });
   }
 
   async assignTask(assignTaskDto: AssignTaskDto): Promise<any> {
