@@ -4,6 +4,7 @@ import { Task } from './task.interface';
 
 export interface Person {
   _id: string;
+  avatar?: string;
   firstName?: string;
   lastName?: string;
   position?: string;

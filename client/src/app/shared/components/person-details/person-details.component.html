@@ -1,20 +1,25 @@
 <div *ngIf="person">
-  <div>
+  <div class="header-details">
     <div>
-      <label for="name">Name</label>
-      {{ person.firstName }} {{ person.lastName }}
+      <img class="avatar-img" src="{{person.avatar}}">
     </div>
-    <div>
-      <label for="position">Position</label>
-      {{ person.position }}
-    </div>
-    <hr />
-    <div>
-      <label for="manager">Manager:</label>
-      {{ person.manager?.firstName }} {{ person.manager?.lastName }}
-      <button mat-raised-button color="primary" (click)="onReport(person)">
-        Report
-      </button>
+    <div class="avatar-details">
+      <div>
+        <label for="name">Name:</label>
+        {{ person.firstName }} {{ person.lastName }}
+      </div>
+      <div>
+        <label for="position">Position:</label>
+        {{ person.position }}
+      </div>
+      <hr />
+      <div>
+        <label for="manager">Manager:</label>
+        {{ person.manager?.firstName }} {{ person.manager?.lastName }}
+        <button mat-raised-button color="primary" (click)="onReport(person)">
+          Report
+        </button>
+      </div>
     </div>
   </div>
   <div class="tasks" *ngIf="person.tasks">
@@ -36,7 +41,13 @@
       <mat-list-item *ngFor="let subordinate of person?.subordinates">
         {{ subordinate.firstName }} {{ subordinate.lastName }}
         {{ subordinate.position }}
-        <button mat-raised-button color="primary" (click)="onAssignTask(subordinate)">Assign Task</button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onAssignTask(subordinate)"
+        >
+          Assign Task
+        </button>
       </mat-list-item>
     </mat-list>
   </div>

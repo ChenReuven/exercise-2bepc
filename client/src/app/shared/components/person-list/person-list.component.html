@@ -1,11 +1,11 @@
 <div class="person-list-container">
   <mat-list class="person-list" role="list">
-    <mat-list-item role="listitem" *ngFor="let person of persons">
+    <mat-list-item class="list-item" role="listitem" *ngFor="let person of persons">
       <span
         >{{ person.firstName }} {{ person.lastName }}
         {{ person.position }}</span
       >
-      <a routerLink="/{{ personType }}/details/{{ person._id }}">
+      <a class="view-btn" routerLink="/{{ personType }}/details/{{ person._id }}">
         <button mat-stroked-button color="primary">View</button>
       </a>
     </mat-list-item>

@@ -2,6 +2,7 @@ import * as mongoose from 'mongoose';
 
 export const EmployeeSchema = new mongoose.Schema(
   {
+    avatar: String,
     firstName: { type: String, require: true },
     lastName: { type: String, require: true },
     position: String,
