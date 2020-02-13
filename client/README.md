@@ -1,3 +1,8 @@
+# Getting Started
+1. npm run install (Node 10 and above required)
+2. run npm run start to start your local development server
+Note: U must raise docker mongo with docker compose up command and start your server [This Code is exise in the server folder]
+
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
