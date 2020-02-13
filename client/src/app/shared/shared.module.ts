@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { PersonDetailsComponent } from './components/person-details/person-details.component';
 import { ReportDialogComponent } from './components/dialogs/report-dialog/report-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSlideToggleModule,
     RouterModule,
   ],
   entryComponents: [ReportDialogComponent, AssignTaskDialogComponent],

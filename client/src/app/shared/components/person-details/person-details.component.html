@@ -1,4 +1,5 @@
 <div *ngIf="person">
+  <mat-slide-toggle class="dev-mode-slide-toggle" (change)="devMode = !devMode">Dev Mode</mat-slide-toggle>
   <div class="header-details">
     <div>
       <img class="avatar-img" src="{{person.avatar}}">
@@ -65,5 +66,5 @@
     </mat-list>
   </div>
 
-  <pre>{{person | json}}</pre>
+  <pre *ngIf="devMode">{{person | json}}</pre>
 </div>

@@ -17,6 +17,8 @@ export class PersonDetailsComponent {
   @Output() report = new EventEmitter<Report>();
   @Output() assignTask = new EventEmitter<any>();
 
+  devMode = false;
+
   constructor(public dialog: MatDialog) {}
 
   onReport(person: Person): void {
