@@ -13,9 +13,8 @@ import { APP_ROUTE_PATHS } from './constants/app-routes-paths.const';
       { path: APP_ROUTE_PATHS.employeeDetails, component: EmployeeDetailsComponent},
       { path: APP_ROUTE_PATHS.managers, component: ManagerComponent },
       { path: APP_ROUTE_PATHS.managerDetails, component: ManagerDetailsComponent},
-      //{ path: APP_ROUTE_PATHS.default, redirectTo: APP_ROUTE_PATHS.employees},
-      { path: '', redirectTo: APP_ROUTE_PATHS.employees, pathMatch: 'full' }
-    ])
+      { path: APP_ROUTE_PATHS.default, redirectTo: APP_ROUTE_PATHS.employees}
+    ], { useHash: true })
   ],
   exports: [
     RouterModule,
