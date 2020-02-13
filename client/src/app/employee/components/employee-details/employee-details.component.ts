@@ -10,7 +10,6 @@ import { ReportDto } from 'src/app/data/models/dto/report-dto';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
-  styleUrls: ['./employee-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeDetailsComponent implements OnInit {
@@ -18,7 +17,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private employeeService: EmployeeService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadEmployee();
   }
 
@@ -28,11 +27,12 @@ export class EmployeeDetailsComponent implements OnInit {
 
   }
 
-  onReport(report: Report, employee: Employee) {
+  onReport(report: Report, employee: Employee): void {
     const {_id: id, manager} = employee;
+    const {_id: managerId} = manager;
     const reportDto: ReportDto = {
       employeeId: id,
-      managerId: manager._id,
+      managerId,
       report
     };
     this.employeeService.report(reportDto);

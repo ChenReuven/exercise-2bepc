@@ -32,6 +32,7 @@
       140
     ],
     "member-access": false,
+    "no-empty-interface": false,
     "member-ordering": [
       true,
       {
@@ -53,6 +54,8 @@
       "trace"
     ],
     "no-empty": false,
+    "no-shadowed-variable": true,
+    "variable-name": false,
     "no-inferrable-types": [
       true,
       "ignore-params"

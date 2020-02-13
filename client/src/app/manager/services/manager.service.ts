@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Employee } from 'src/app/data/models/employee.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { managersMock } from 'src/app/data/mocks/managers.mock';
 import { Manager } from 'src/app/data/models/manager.interface';
 import { TaskDto } from 'src/app/data/models/dto/task-dto';
 import { ReportDto } from 'src/app/data/models/dto/report-dto';
 import { HttpClient } from '@angular/common/http';
+import { APP_APIS_URL } from 'src/app/constants/app-apis-url.const';
 
 @Injectable({
   providedIn: 'root'
@@ -14,22 +14,16 @@ import { HttpClient } from '@angular/common/http';
 export class ManagerService {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
   getManagers(): Observable<Manager[]> {
-    // return of(managersMock);
-    return this.http.get<Manager[]>('/managers');
+    return this.http.get<Manager[]>(APP_APIS_URL.managers_url);
   }
 
   getManager(managerId: string): Observable<Manager> {
-    // tslint:disable-next-line: no-shadowed-variable
-    const manager: Manager = managersMock.find(
-      (manager: Manager) => manager._id === managerId
-    );
-    // return of(manager);
-    return this.http.get<Employee>('/managers/' + managerId);
+    return this.http.get<Employee>(APP_APIS_URL.getManagerDetailsUrl(managerId));
   }
 
-  report(reportDto: ReportDto) {
+  report(reportDto: ReportDto): void {
      this.http
-      .post<Manager>('/managers/report', {
+      .post<Manager>(APP_APIS_URL.managers_reports_url, {
         text: reportDto.report.text,
         date: reportDto.report.date,
         managerId: reportDto.managerId,
@@ -38,12 +32,11 @@ export class ManagerService {
       .subscribe(data => {
         this.openSnackBar('Report Success', 'Close');
       });
-     return of({});
   }
 
-  assignTask(taskDto: TaskDto) {
+  assignTask(taskDto: TaskDto): void {
     this.http
-    .post<Manager>('/managers/assign-task', {
+    .post<Manager>(APP_APIS_URL.managers_assign_task_url, {
       text: taskDto.task.text,
       assignDate: taskDto.task.assignDate,
       dueDate: taskDto.task.dueDate,
@@ -53,7 +46,6 @@ export class ManagerService {
     .subscribe(data => {
       this.openSnackBar('Assign Task Successfully', 'Close');
     });
-    return of({});
   }
 
   openSnackBar(message: string, action: string) {
