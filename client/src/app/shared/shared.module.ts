@@ -14,6 +14,8 @@ import { AssignTaskDialogComponent } from './components/dialogs/assign-task-dial
 import { MatNativeDateModule } from '@angular/material/core';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { RouterModule } from '@angular/router';
+import { HttpErrorService } from './services/http-error.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [PersonListComponent, PersonDetailsComponent, ReportDialogComponent, AssignTaskDialogComponent],
@@ -29,9 +31,11 @@ import { RouterModule } from '@angular/router';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
+    MatSnackBarModule,
     RouterModule,
   ],
   entryComponents: [ReportDialogComponent, AssignTaskDialogComponent],
+  providers: [HttpErrorService],
   exports: [PersonListComponent, PersonDetailsComponent]
 })
 export class SharedModule {}

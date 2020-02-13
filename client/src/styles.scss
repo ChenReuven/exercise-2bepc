@@ -5,3 +5,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 label { font-weight: bold;}
+
+.error-snackbar{
+  background: red;
+  color: #ffffff;
+}
