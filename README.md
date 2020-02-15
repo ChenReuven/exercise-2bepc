@@ -4,6 +4,11 @@
 
 ![](assets/showcase/2bpc-showcase.gif)
 
+#### High Level App Relationship Diagram
+
+![](assets/showcase/high-level-app-relationship.png)
+
+
 The app is seperate into two parts:
 - server - NestJS with mongoose (NodeJS)
 - client - Angular 9 :)
