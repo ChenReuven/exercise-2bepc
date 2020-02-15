@@ -1,9 +1,9 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {EmployeeComponent} from './employee/pages/employee.component';
-import {ManagerComponent} from './manager/pages/manager.component';
-import { EmployeeDetailsComponent } from './employee/components/employee-details/employee-details.component';
-import { ManagerDetailsComponent } from './manager/manager-details/manager-details.component';
+import {EmployeeComponent} from './modules/employee/pages/employee.component';
+import {ManagerComponent} from './modules/manager/pages/manager.component';
+import { EmployeeDetailsComponent } from './modules/employee/components/employee-details/employee-details.component';
+import { ManagerDetailsComponent } from './modules/manager/manager-details/manager-details.component';
 import { APP_ROUTE_PATHS } from './constants/app-routes-paths.const';
 
 @NgModule({

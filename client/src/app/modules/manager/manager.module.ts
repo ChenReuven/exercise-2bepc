@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { ManagerService } from './services/manager.service';
 import { ManagerDetailsComponent } from './manager-details/manager-details.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [ManagerComponent, ManagerDetailsComponent],
