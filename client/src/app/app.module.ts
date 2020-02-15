@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app.routing.module';
 import {EmployeeModule} from './employee/employee.module';
 import {ManagerModule} from './manager/manager.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,10 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     AppRoutingModule,
     EmployeeModule,
     ManagerModule,
+    CoreModule,
     SharedModule
   ],
   providers: [],

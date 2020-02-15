@@ -25,21 +25,16 @@ export class ManagersService {
   }
 
   async reportToManager(reportToManagerDto: ReportToManagerDto): Promise<any> {
-    // tslint:disable-next-line: no-shadowed-variable
     const { text, date, managerId, employeeId } = reportToManagerDto;
-    // tslint:disable-next-line: no-shadowed-variable
     const report = await this.reportsService.create({text, date});
     const managerUpdate = await this.findOneAndUpdate({managerId, reportId: report._id });
   }
 
   async assignTask(assignTaskDto: AssignTaskDto): Promise<any> {
-    // tslint:disable-next-line: no-shadowed-variable
     const { text, assignDate, dueDate, employeeId } = assignTaskDto;
 
     const task = await this.tasksService.create({text, assignDate, dueDate});
-    // await this.employeesService.assignTask({employeeId, taskId: task._id}); ///////
     await this.employeeModel.findOneAndUpdate({_id: employeeId}, { $push: { tasks: task._id }}).exec();
-    //await this.managerModel.findOneAndUpdate({_id: employeeId}, { $push: { tasks: task._id }}).exec();
   }
 
   async findOneAndUpdate({managerId, reportId}): Promise<any> {

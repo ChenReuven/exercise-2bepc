@@ -25,7 +25,6 @@ export class EmployeesService {
   }
 
   async reportToManager(reprotEmployeeToManagerDto: ReprotEmployeeToManagerDto): Promise<any> {
-    // tslint:disable-next-line: no-shadowed-variable
     const { text, date, managerId, employeeId } = reprotEmployeeToManagerDto;
     const report = await this.reportsService.create({text, date});
     const managerUpdate = await this.managersService.findOneAndUpdate({managerId, reportId: report._id });
