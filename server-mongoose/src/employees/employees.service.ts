@@ -5,7 +5,6 @@ import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { Employee } from './interface/employee.interface';
 import { ReprotEmployeeToManagerDto } from './dto/report-employee-to-manager.dto';
 import { ReportsService } from 'src/reports/reports.service';
-import { text } from 'express';
 import { ManagersService } from 'src/managers/managers.service';
 
 @Injectable()
@@ -25,7 +24,7 @@ export class EmployeesService {
   }
 
   async reportToManager(reprotEmployeeToManagerDto: ReprotEmployeeToManagerDto): Promise<any> {
-    const { text, date, managerId, employeeId } = reprotEmployeeToManagerDto;
+    const { text, date, managerId } = reprotEmployeeToManagerDto;
     const report = await this.reportsService.create({text, date});
     const managerUpdate = await this.managersService.findOneAndUpdate({managerId, reportId: report._id });
   }

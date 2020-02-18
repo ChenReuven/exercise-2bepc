@@ -7,7 +7,6 @@ import { ReportToManagerDto } from './dto/report-to-manager.dto';
 import { ReportsService } from 'src/reports/reports.service';
 import { AssignTaskDto } from './dto/assign-task.dto';
 import { TasksService } from 'src/tasks/tasks.service';
-import { EmployeesService } from 'src/employees/employees.service';
 import { Employee } from 'src/employees/interface/employee.interface';
 
 @Injectable()

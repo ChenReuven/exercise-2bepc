@@ -7,7 +7,6 @@ import { ManagersService } from './managers.service';
 import { ManagerSchema } from './schemas/manager.schema';
 import { TaskSchema } from 'src/tasks/schemas/task.schema';
 import { ReportSchema } from 'src/reports/schemas/report.schema';
-import { EmployeesService } from 'src/employees/employees.service';
 import { EmployeesModule } from 'src/employees/employees.module';
 import { EmployeeSchema } from 'src/employees/schemas/employee.schema';
 

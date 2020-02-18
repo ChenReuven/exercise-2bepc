@@ -26,6 +26,7 @@ Then, run Nest as usual:
 `npm run start`
 
 
+## Server Design
 -- Server Design --
 1. define domain/entities and connection and modules
 2. define use cases (domain services)
