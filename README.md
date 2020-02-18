@@ -8,6 +8,9 @@
 
 ![](assets/showcase/high-level-app-relationship.png)
 
+### High Level App Architcture Diagram
+![](assets/showcase/high-level-app-frontend.png)
+
 
 The app is seperate into two parts:
 - server - NestJS with mongoose (NodeJS)
